@@ -29,3 +29,25 @@ function timeConversion(s) {
     }
 
 }
+
+
+function diagonalDifference(arr) {
+    // Write your code here
+    let j = 0;
+    let m = arr.length - 1;
+    let leftDiagonal = 0;
+    let rightDiagonal = 0;
+    for(let i=0;i<arr.length;i++){
+        leftDiagonal += arr[i][j];
+        j++;
+    }
+    for(let i=0;i<arr.length;i++){
+        rightDiagonal += arr[i][m];
+        m--;
+    }
+    const diff = (a, b) => {
+    return Math.abs(a - b);
+    }
+    return diff(leftDiagonal, rightDiagonal);
+
+}
